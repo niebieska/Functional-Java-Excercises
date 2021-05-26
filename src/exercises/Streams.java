@@ -13,77 +13,92 @@ import static common.DataFactory.*;
 
 public class Streams {
 
+    /**
+     * Please complete all of below exercises using Stream API and data from @DataFactory class
+     *
+     * For data sources please use following methods:
+     *
+     * book list - getBooks() method
+     * movie series list - getMovieSeries() method
+     * random words generator - getSomeRandomWords() method
+     *
+     */
     public static void main(String[] args) {
 
         // map
-        List<String> bookNames =
-                getBooks().stream()
-                        .map(Book::getTitle)
-                        .collect(Collectors.toList());
+        /**
+         * Please return a list of book titles from provided book list
+         */
+        List<String> bookNames = null;
 
         // flatmap
-        List<Movie> availableMovies =
-                getMovieSeries().stream()
-                        .flatMap(Collection::stream)
-                        .collect(Collectors.toList());
+        /**
+         * Please return a list of all available movies from provided movie series list
+         */
+        List<Movie> availableMovies = null;
 
         // filter
-        List<Book> booksByJKRowling =
-                getBooks().stream()
-                        .filter(book -> book.getAuthor() == Author.J_K_ROWLING)
-                        .collect(Collectors.toList());
+        /**
+         * Please return a list of all books written by J_K_ROWLING from provided book list
+         */
+        List<Book> booksByJKRowling = null;
 
         // count
-        long booksByTerryPratchettCount =
-                getBooks().stream()
-                .filter(book -> book.getAuthor() == Author.T_PRATCHETT)
-                .count();
+        /**
+         * Please return the amount of books written by T_PRATCHETT from provided book list
+         */
+        long booksByTerryPratchettCount = 0;
 
         // findFirst - nicer effect with parallel stream
-        Optional<Movie> firstStarWarsMovieOnTheShelf =
-                getMovieSeries().parallelStream()
-                        .flatMap(Collection::stream)
-                        .filter(movie -> movie.getSeries() == MovieSeries.STAR_WARS)
-                        .findFirst();
+        /**
+         * Please find first available STAR_WARS movie from provided movie series list
+         */
+        Optional<Movie> firstStarWarsMovieOnTheShelf = null;
 
         // findAny - nicer effect with parallel stream
-        Optional<Book> findAnyBookByASapkowski =
-                getBooks().parallelStream()
-                        .filter(book -> book.getAuthor() == Author.A_SAPKOWSKI)
-                        .findAny();
+        /**
+         * Please find any book written by A_SAPKOWSKI from provided book list
+         */
+        Optional<Book> anyBookByASapkowski = null;
 
 
         // toList
-        List<String> movieList =
-                getMovieSeries().stream()
-                        .flatMap(Collection::stream)
-                        .map(Movie::getTitle)
-                        .collect(Collectors.toList());
+        /**
+         * Please create a list of all movie title from provided movie list
+         */
+        List<String> movieTitlesList = null;
 
         // toSet
-        Set<Author> bookAuthors =
-                getBooks().stream()
-                        .map(Book::getAuthor)
-                        .collect(Collectors.toSet());
+        /**
+         * Please create a set of all authors from provided book list
+         */
+        Set<Author> bookAuthors = null;
 
         // toMap
-        Map<Author, Book> booksByAuthorMap =
-                getBooks().stream()
-                        .collect(Collectors.toMap(Book::getAuthor, Function.identity(),
-                                (Book existing, Book replacement) -> existing));
+        /**
+         * Please create a map of books with author as a key from provided book list
+         *
+         * !only one book per author is required
+         * !if new book is found for the same author it should replace the previous one
+         */
+        Map<Author, Book> bookOfAnAuthorMap = null;
 
         // groupingBy
-        Map<Author, Set<Book>> booksGroupedByAuthor =
-                getBooks().stream()
-                        .collect(Collectors.groupingBy(Book::getAuthor, Collectors.toSet()));
+        /**
+         * Please create a map of books with author as a key from provided book list
+         */
+        Map<Author, Set<Book>> booksGroupedByAuthor = null;
 
         // joining
-        String totallyRandomSentence =
-                getSomeRandomWords().stream()
-                        .map(String::toUpperCase)
-                        .collect(Collectors.joining(" "));
+        /**
+         * Please create a string from provided random words generator, using " " (space) as a delimiter
+         */
+        String totallyRandomSentence = null;
 
         // forEach - only to display results!
-//        availableMovies.forEach(movie -> System.out.println(movie.getTitle()));
+        /**
+         * Please display any of the results on the console using forEach() method and a Consumer<T> functional interface
+         */
+        // code
     }
 }

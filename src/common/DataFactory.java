@@ -56,4 +56,12 @@ public class DataFactory {
     public static Optional<String> getEmptyOptional() {
         return Optional.empty();
     }
+
+    public static String emptyOptionalInfo() {
+        return "Nothing was found here either";
+    }
+
+    public static String getSuppliedText() {
+        return "I came here to supply you with an example string";
+    }
 }

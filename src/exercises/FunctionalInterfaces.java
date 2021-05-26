@@ -1,36 +1,58 @@
 package exercises;
 
+import common.DataFactory;
+
 import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.*;
+
+import static common.DataFactory.getSuppliedText;
 
 public class FunctionalInterfaces {
 
     public static void main(String[] args) {
 
         // UnaryOperator
-        UnaryOperator<Integer> unaryOperator = x -> x * 5;
-        Integer unaryOperatorResult = unaryOperator.apply(25);
+        /**
+         * Please create a UnaryOperator<Integer> instance that returns its parameter multiplied by 5.
+         * After that please use it and return the result.
+         */
+        // code
 
         // BinaryOperator
-        BinaryOperator<BigInteger> binaryOperator = BigInteger::add;
-        BigInteger binaryOperatorResult = binaryOperator.apply(BigInteger.valueOf(10L), BigInteger.valueOf(5L));
+        /**
+         * Please create a BinaryOperator<BigInteger> instance that returns the sum of its parameters.
+         * After that please use it and return the result.
+         */
+        // code
 
         // Predicate
-        Predicate<String> predicate = String::isEmpty;
-        Boolean isStringEmpty = predicate.test("asd");
+        /**
+         * Please create a Predicate<String> instance that determines whether passed parameter is empty
+         * After that please use it and return the result.
+         */
+        // code
 
         // Function
-        Function<List<String>,String> convertListToString = list -> Arrays.toString(list.toArray());
-        String convertedList = convertListToString.apply(Arrays.asList("one", "two", "three"));
+        /**
+         * Please create a Function<List<String>,<String>> instance that will take a list of strings,
+         * convert it to array and then convert it to a string.
+         * After that please use it and return the result.
+         */
+        // code
 
         // Supplier
-        Supplier<BigInteger> bigIntSupplier = () -> BigInteger.TEN;
-        BigInteger bigInteger = bigIntSupplier.get();
+        /**
+         * Please create a Supplier<String> that would call on getSuppliedText() method.
+         * After that please use it and return the result.
+         */
+        // code
 
         // Consumer
-        Consumer<String> consumer = s -> System.out.println("Lemme print something for you: " + s);
-        consumer.accept("consumer seems to be working");
+        /**
+         * Please create a Consumer<String> that would display the parameter on a console
+         */
+        // code
     }
 }
